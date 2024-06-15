@@ -19,11 +19,16 @@ function signup() {
 
     var checkemail = getemail.value;
 
-    if (getname.value.trim().length == 0 || !checkemail.includes("@gmail.com")) {
+    if (getname.value.trim().length == 0 || getemail.value.trim().length == 0 || !checkemail.includes("@gmail.com")) {
+        signupbtn.classList.remove("disab");
+        signinbtn.classList.add("disab");
+        namefield.style.maxHeight = "60px";
         alert("Value not found");
     }
+if(getname.value.trim().length != 0 && getemail.value.trim().length != 0)
+    {
 
-    var obj = {
+     var obj = {
         nam: getname.value,
         email: getemail.value,
         pass: getpass.value,
@@ -35,7 +40,8 @@ function signup() {
     getname.value  = "";
     getemail.value = "";
     getpass.value  = "";
-
+    
+    }
 }
 
 
